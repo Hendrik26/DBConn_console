@@ -16,8 +16,8 @@ public class Main extends Application {
     static final String DB_URL = "jdbc:mysql://localhost/EMP";
 
     //  Database credentials
-    static final String USER = "username";
-    static final String PASS = "password";
+    static final String USER = "root";
+    static final String PASS = "";
 
     private void connectDB(){
         System.out.println("Begin connecting to DB!!!\r\n");
