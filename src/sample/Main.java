@@ -21,7 +21,7 @@ public class Main extends Application {
 
     private void connectDB(){
         System.out.println("Begin connecting to DB!!!\r\n");
-        System.out.println("----------------------------\rßn\r\n");
+        System.out.println("----------------------------\r\n\r\n");
 
         Connection conn = null;
         Statement stmt = null;
