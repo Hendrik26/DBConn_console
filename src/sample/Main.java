@@ -29,6 +29,8 @@ public class Main extends Application {
         try{
             //STEP 2: Register JDBC driver
             Class.forName("com.mysql.jdbc.Driver");
+            // Driver driver01 = new org.mariadb.jdbc.Driver();
+            // Driver driver02 = new
 
             //STEP 3: Open a connection
             System.out.println("Connecting to database...");
