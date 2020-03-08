@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 
 //STEP 1. Import required packages
 import java.sql.*;
+import myOverPackage.*;
 // Branch HH001
 
 public class Main extends Application {
@@ -21,6 +22,9 @@ public class Main extends Application {
     static final String PASS = "";
 
     private void connectDB(){
+        OverPWriter overPWriter = new OverPWriter();
+        overPWriter.writeText("aaaaaa");
+
         System.out.println("Begin connecting to DB!!!\r\n");
         System.out.println("----------------------------\r\n\r\n");
 
