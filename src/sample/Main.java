@@ -9,11 +9,13 @@ import javafx.stage.Stage;
 //STEP 1. Import required packages
 import java.sql.*;
 // Branch HH
+// import mariadb-java-client-2.5.4-sources
 
 public class Main extends Application {
 
     // JDBC driver name and database URL
-    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
+    // static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
+    static final String JDBC_DRIVER = "org.mariadb.jdbc.Driver";
     static final String DB_URL = "jdbc:mysql://localhost/EMP";
 
     //  Database credentials
@@ -28,7 +30,9 @@ public class Main extends Application {
         Statement stmt = null;
         try{
             //STEP 2: Register JDBC driver
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName(JDBC_DRIVER);
+            Driver driver01 = new org.mariadb.jdbc.Driver();
+            Driver driver02 = new
 
             //STEP 3: Open a connection
             System.out.println("Connecting to database...");
