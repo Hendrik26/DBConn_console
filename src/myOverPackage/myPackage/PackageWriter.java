@@ -1,5 +1,5 @@
 package myOverPackage.myPackage;
 
-public class UnderPWriter001 {
+public class PackageWriter {
     ///
 }
