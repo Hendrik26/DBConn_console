@@ -42,7 +42,7 @@ public class Main extends Application {
             Class.forName("com.mysql.jdbc.Driver");
             // Driver driver01 = new org.mariadb.jdbc.Driver();
             // Driver driver02 = new
-            java.sql.Driver driver03 = new org.mariadb.jdbc.Driver();
+            // java.sql.Driver driver03 = new org.mariadb.jdbc.Driver();
 
             //STEP 3: Open a connection
             System.out.println("Connecting to database...");
