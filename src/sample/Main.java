@@ -35,6 +35,7 @@ public class Main extends Application {
         sampleWriter.writeText("samW, samW, samW");
 
 
+
         System.out.println("Begin connecting to DB!!!\r\n");
         System.out.println("----------------------------\r\n\r\n");
 
