@@ -43,6 +43,11 @@ public class Main extends Application {
             // Driver driver01 = new org.mariadb.jdbc.Driver();
             // Driver driver02 = new
             // java.sql.Driver driver03 = new org.mariadb.jdbc.Driver();
+            org.mariadb.jdbc.LocalInfileInterceptor = new org.mariadb.jdbc.LocalInfileInterceptor(){
+                boolean validate(String fileName){
+                    return false;
+                }
+            };
 
             //STEP 3: Open a connection
             System.out.println("Connecting to database...");
