@@ -31,6 +31,9 @@ public class Main extends Application {
         myOverPackage.myPackage.myUnderPackage.UnderPWriter underPWriter
                 = new myOverPackage.myPackage.myUnderPackage.UnderPWriter();
         underPWriter.writeText("ccccccccccccc");
+        SampleWriter sampleWriter = new SampleWriter();
+        sampleWriter.writeText("samW, samW, samW");
+
 
         System.out.println("Begin connecting to DB!!!\r\n");
         System.out.println("----------------------------\r\n\r\n");
