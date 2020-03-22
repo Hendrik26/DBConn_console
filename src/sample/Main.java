@@ -52,12 +52,12 @@ public class Main extends Application {
         try{
 
             //STEP 3Maria: Open a connection
-            System.out.println("Connecting to database MariasDB ...");
+            System.out.println("Connecting to database MariaDB ...");
             String urlMaria = "jdbc:mariadb://" + hostMaria + "/" + dbnameMaria;
             Class.forName(JDBC_DRIVER_MARIA);
             Connection connMaria
                     = DriverManager.getConnection(urlMaria, usernameMaria, passwordMaria);
-            System.out.println("Connected to database MariasDB ...");
+            System.out.println("Connected to database MariaDB ...");
 
 
 
