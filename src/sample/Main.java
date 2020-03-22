@@ -49,27 +49,20 @@ public class Main extends Application {
         Connection conn = null;
         Statement stmt = null;
         try{
-            //STEP 2: Register JDBC driver
-            // Class.forName("com.mysql.jdbc.Driver");
-            // Driver driver01 = new org.mariadb.jdbc.Driver();
-            // Driver driver02 = new
-            // java.sql.Driver driver03 = new org.mariadb.jdbc.Driver();
-            /* org.mariadb.jdbc.LocalInfileInterceptor = new org.mariadb.jdbc.LocalInfileInterceptor(){
-                boolean validate(String fileName){
-                    return false;
-                }
-            }; */
 
+            //STEP 3Maria: Open a connection
             System.out.println("Connecting to database MariasDB ...");
             String urlMaria = "jdbc:mariadb://" + hostMaria + "/" + dbnameMaria;
-            // Class.forName(JDBC_DRIVER_MARIA);
+            Class.forName(JDBC_DRIVER_MARIA);
             Connection connMaria
                     = DriverManager.getConnection(urlMaria, usernameMaria, passwordMaria);
             System.out.println("Connected to database MariasDB ...");
 
+
+
             //STEP 3: Open a connection
             System.out.println("Connecting to database MySQL ...");
-            // conn = DriverManager.getConnection(DB_URL,USER,PASS);
+             conn = DriverManager.getConnection(DB_URL,USER,PASS);
 
             //STEP 4: Execute a query
             System.out.println("Creating statement...");
