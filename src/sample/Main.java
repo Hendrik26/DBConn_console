@@ -24,6 +24,13 @@ public class Main extends Application {
     static final String USER = "root";
     static final String PASS = "";
 
+    static final String JDBC_DRIVER_MARIA = "org.mariadb.jdbc.Driver";
+    static final String hostMaria = "localhost";
+    static final String dbnameMaria = "db_waehrgs_r";
+    // String urlMaria = "jdbc:mariadb://" + hostMaria + "/" + dbnameMaria;
+    static final String usernameMaria = "root";
+    static final String passwordMaria = "";
+
     private void connectDB(){
         OverPWriter overPWriter = new OverPWriter();
         overPWriter.writeText("aaaaaa");
@@ -43,7 +50,7 @@ public class Main extends Application {
         Statement stmt = null;
         try{
             //STEP 2: Register JDBC driver
-            Class.forName("com.mysql.jdbc.Driver");
+            // Class.forName("com.mysql.jdbc.Driver");
             // Driver driver01 = new org.mariadb.jdbc.Driver();
             // Driver driver02 = new
             // java.sql.Driver driver03 = new org.mariadb.jdbc.Driver();
@@ -53,9 +60,16 @@ public class Main extends Application {
                 }
             }; */
 
+            System.out.println("Connecting to database MariasDB ...");
+            String urlMaria = "jdbc:mariadb://" + hostMaria + "/" + dbnameMaria;
+            // Class.forName(JDBC_DRIVER_MARIA);
+            Connection connMaria
+                    = DriverManager.getConnection(urlMaria, usernameMaria, passwordMaria);
+            System.out.println("Connected to database MariasDB ...");
+
             //STEP 3: Open a connection
-            System.out.println("Connecting to database...");
-            conn = DriverManager.getConnection(DB_URL,USER,PASS);
+            System.out.println("Connecting to database MySQL ...");
+            // conn = DriverManager.getConnection(DB_URL,USER,PASS);
 
             //STEP 4: Execute a query
             System.out.println("Creating statement...");
