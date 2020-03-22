@@ -43,12 +43,18 @@ public class Main extends Application {
 
 
 
+
         System.out.println("Begin connecting to DB!!!\r\n");
         System.out.println("----------------------------\r\n\r\n");
 
         Connection conn = null;
         Statement stmt = null;
         try{
+            // test Class.forName(...)
+            Class<SampleWriter> classSampleWriter001
+                    = (Class<SampleWriter>)Class.forName("SampleWriter");
+            SampleWriter sampleWriter001 = (SampleWriter) classSampleWriter001;
+            sampleWriter001.writeText("samW, samW, samW");
 
             //STEP 3Maria: Open a connection
             System.out.println("Connecting to database MariasDB ...");
