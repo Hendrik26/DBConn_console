@@ -47,7 +47,7 @@ public class Main extends Application {
         System.out.println("Begin connecting to DB!!!\r\n");
         System.out.println("----------------------------\r\n\r\n");
 
-        Connection conn = null;
+        // Connection conn = null;
         Connection connMaria = null;
         Statement stmt = null;
         try{
@@ -86,7 +86,7 @@ public class Main extends Application {
             //STEP 6: Clean-up environment
             rs.close();
             stmt.close();
-            conn.close();
+            connMaria.close();
         }catch(SQLException se){
             //Handle errors for JDBC
             se.printStackTrace();
@@ -101,8 +101,8 @@ public class Main extends Application {
             }catch(SQLException se2){
             }// nothing we can do
             try{
-                if(conn!=null)
-                    conn.close();
+                if(connMaria!=null)
+                    connMaria.close();
             }catch(SQLException se){
                 se.printStackTrace();
             }//end finally try
