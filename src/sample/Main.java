@@ -48,7 +48,7 @@ public class Main extends Application {
             //STEP 3Maria: Open a connection
             System.out.println("Connecting to database MariaDB ...");
             String urlMaria = "jdbc:mariadb://" + HOST_MARIA + "/" + DBNAME_MARIA;
-            Class.forName(JDBC_DRIVER_MARIA);
+            Class<?> driverClassMaria = Class.forName(JDBC_DRIVER_MARIA);
             connMaria = DriverManager.getConnection(urlMaria, USERNAME_MARIA, PW_MARIA);
             System.out.println("Connected to database MariaDB ...");
 
