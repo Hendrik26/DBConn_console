@@ -48,6 +48,7 @@ public class Main extends Application {
         System.out.println("----------------------------\r\n\r\n");
 
         Connection conn = null;
+        Connection connMaria = null;
         Statement stmt = null;
         try{
 
@@ -55,8 +56,7 @@ public class Main extends Application {
             System.out.println("Connecting to database MariaDB ...");
             String urlMaria = "jdbc:mariadb://" + hostMaria + "/" + dbnameMaria;
             Class.forName(JDBC_DRIVER_MARIA);
-            Connection connMaria
-                    = DriverManager.getConnection(urlMaria, usernameMaria, passwordMaria);
+            connMaria = DriverManager.getConnection(urlMaria, usernameMaria, passwordMaria);
             System.out.println("Connected to database MariaDB ...");
 
 
