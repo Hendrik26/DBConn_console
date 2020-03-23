@@ -16,7 +16,6 @@ public class Main extends Application {
 
     // JDBC driver name and database URL
     //  Database credentials
-    ///
 
     static final String JDBC_DRIVER_MARIA = "org.mariadb.jdbc.Driver";
     static final String HOST_MARIA = "localhost";
@@ -52,13 +51,7 @@ public class Main extends Application {
             Class.forName(JDBC_DRIVER_MARIA);
             connMaria = DriverManager.getConnection(urlMaria, USERNAME_MARIA, PW_MARIA);
             System.out.println("Connected to database MariaDB ...");
-
-
-
-            //STEP 3: Open a connection
-           //  System.out.println("Connecting to database MySQL ...");
-             // conn = DriverManager.getConnection(DB_URL,USER,PASS);
-
+            
             //STEP 4: Execute a query
             System.out.println("Creating statement...");
             stmt = connMaria.createStatement();
