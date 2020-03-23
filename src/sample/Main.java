@@ -69,22 +69,19 @@ public class Main extends Application {
             System.out.println("Creating statement...");
             stmt = connMaria.createStatement();
             String sql;
-            sql = "SELECT id, first, last, age FROM Employees";
+            sql = "SELECT id, Waehrgs_Name FROM tbl_waehrgs_name";
             ResultSet rs = stmt.executeQuery(sql);
 
             //STEP 5: Extract data from result set
             while(rs.next()){
                 //Retrieve by column name
                 int id  = rs.getInt("id");
-                int age = rs.getInt("age");
-                String first = rs.getString("first");
-                String last = rs.getString("last");
+                String waehrgsName = rs.getString("Waehrgs_Name");
 
                 //Display values
-                System.out.print("ID: " + id);
-                System.out.print(", Age: " + age);
-                System.out.print(", First: " + first);
-                System.out.println(", Last: " + last);
+                String row = "ID: " + id + "; WaehrungsName: " + waehrgsName + ";\r\n";
+                System.out.print(row);
+
             }
             //STEP 6: Clean-up environment
             rs.close();
@@ -110,7 +107,7 @@ public class Main extends Application {
                 se.printStackTrace();
             }//end finally try
         }//end try
-        System.out.println("Goodbye!");
+        System.out.println("Goodbye!!!!!!!!!!!!");
     }
 
     @Override
