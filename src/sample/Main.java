@@ -10,26 +10,20 @@ import javafx.stage.Stage;
 import java.sql.*;
 import myOverPackage.*;
 
-import myOverPackage001.OverPWriter001;
-
 // Branch HH002
 
 public class Main extends Application {
 
     // JDBC driver name and database URL
-    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://localhost/EMP";
-
     //  Database credentials
-    static final String USER = "root";
-    static final String PASS = "";
+
 
     static final String JDBC_DRIVER_MARIA = "org.mariadb.jdbc.Driver";
-    static final String hostMaria = "localhost";
-    static final String dbnameMaria = "db_waehrgs_r";
+    static final String HOST_MARIA = "localhost";
+    static final String DBNAME_MARIA = "db_waehrgs_r";
     // String urlMaria = "jdbc:mariadb://" + hostMaria + "/" + dbnameMaria;
-    static final String usernameMaria = "root";
-    static final String passwordMaria = "";
+    static final String USERNAME_MARIA = "root";
+    static final String PW_MARIA = "";
 
     private void connectDB(){
         OverPWriter overPWriter = new OverPWriter();
@@ -54,9 +48,9 @@ public class Main extends Application {
 
             //STEP 3Maria: Open a connection
             System.out.println("Connecting to database MariaDB ...");
-            String urlMaria = "jdbc:mariadb://" + hostMaria + "/" + dbnameMaria;
+            String urlMaria = "jdbc:mariadb://" + HOST_MARIA + "/" + DBNAME_MARIA;
             Class.forName(JDBC_DRIVER_MARIA);
-            connMaria = DriverManager.getConnection(urlMaria, usernameMaria, passwordMaria);
+            connMaria = DriverManager.getConnection(urlMaria, USERNAME_MARIA, PW_MARIA);
             System.out.println("Connected to database MariaDB ...");
 
 
