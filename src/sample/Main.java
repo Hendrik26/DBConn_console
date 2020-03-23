@@ -51,7 +51,7 @@ public class Main extends Application {
             Class.forName(JDBC_DRIVER_MARIA);
             connMaria = DriverManager.getConnection(urlMaria, USERNAME_MARIA, PW_MARIA);
             System.out.println("Connected to database MariaDB ...");
-            
+
             //STEP 4: Execute a query
             System.out.println("Creating statement...");
             stmt = connMaria.createStatement();
@@ -86,7 +86,8 @@ public class Main extends Application {
                 if(stmt!=null)
                     stmt.close();
             }catch(SQLException se2){
-            }// nothing we can do
+                se2.printStackTrace();
+            }
             try{
                 if(connMaria!=null)
                     connMaria.close();
