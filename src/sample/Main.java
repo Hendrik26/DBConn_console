@@ -62,12 +62,12 @@ public class Main extends Application {
 
 
             //STEP 3: Open a connection
-            System.out.println("Connecting to database MySQL ...");
-             conn = DriverManager.getConnection(DB_URL,USER,PASS);
+           //  System.out.println("Connecting to database MySQL ...");
+             // conn = DriverManager.getConnection(DB_URL,USER,PASS);
 
             //STEP 4: Execute a query
             System.out.println("Creating statement...");
-            stmt = conn.createStatement();
+            stmt = connMaria.createStatement();
             String sql;
             sql = "SELECT id, first, last, age FROM Employees";
             ResultSet rs = stmt.executeQuery(sql);
