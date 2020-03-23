@@ -16,7 +16,7 @@ public class Main extends Application {
 
     // JDBC driver name and database URL
     //  Database credentials
-
+    ///
 
     static final String JDBC_DRIVER_MARIA = "org.mariadb.jdbc.Driver";
     static final String HOST_MARIA = "localhost";
