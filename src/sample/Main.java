@@ -17,12 +17,12 @@ public class Main extends Application {
     // JDBC driver name and database URL
     //  Database credentials
 
-    static final String JDBC_DRIVER_MARIA = "org.mariadb.jdbc.Driver";
-    static final String HOST_MARIA = "localhost";
-    static final String DBNAME_MARIA = "db_waehrgs_r";
-    // String urlMaria = "jdbc:mariadb://" + hostMaria + "/" + dbnameMaria;
-    static final String USERNAME_MARIA = "root";
-    static final String PW_MARIA = "";
+    private static final String JDBC_DRIVER_MARIA = "org.mariadb.jdbc.Driver";
+    private static final String HOST_MARIA = "localhost";
+    private static final String DBNAME_MARIA = "db_waehrgs_r";
+    // private String urlMaria = "jdbc:mariadb://" + hostMaria + "/" + dbnameMaria;
+    private static final String USERNAME_MARIA = "root";
+    private static final String PW_MARIA = "";
 
     private void connectDB(){
         OverPWriter overPWriter = new OverPWriter();
