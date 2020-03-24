@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 //STEP 1. Import required packages
+import java.lang.reflect.Constructor;
 import java.sql.*;
 import myOverPackage.*;
 
@@ -23,6 +24,22 @@ public class Main extends Application {
     // private String urlMaria = "jdbc:mariadb://" + hostMaria + "/" + dbnameMaria;
     private static final String USERNAME_MARIA = "root";
     private static final String PW_MARIA = "";
+
+    private String createStringObjectViaClassForName(){
+        try {
+            Class<?> stringClass = Class.forName("java.lang.String");
+            Constructor<?> stringConstructor = stringClass.getConstructor(stringClass);
+            Object retString = stringConstructor.newInstance(
+                    "This is a String created by Class.forName(...)!!!"
+            );
+            return (String) retString;
+        } catch(Exception e) {
+            e.printStackTrace();
+            return "Error creating String by Class.forName(...)!!!";
+        } finally {
+            int i = -1;
+        }
+    }
 
     private void connectDB(){
         OverPWriter overPWriter = new OverPWriter();
