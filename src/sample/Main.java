@@ -124,6 +124,7 @@ public class Main extends Application {
         System.out.println("Hallo World GUI-Console!");
 
         this.connectDB();
+        System.out.println(this.createStringObjectViaClassForName());
     }
 
 
