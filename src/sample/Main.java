@@ -19,6 +19,26 @@ public class Main extends Application {
     //  Database credentials
 
     public static class DbConnectionData {
+        public static String getJdbcDriverMaria() {
+            return JDBC_DRIVER_MARIA;
+        }
+
+        public static String getHostMaria() {
+            return HOST_MARIA;
+        }
+
+        public static String getDbnameMaria() {
+            return DBNAME_MARIA;
+        }
+
+        public static String getUsernameMaria() {
+            return USERNAME_MARIA;
+        }
+
+        public static String getPwMaria() {
+            return PW_MARIA;
+        }
+
         private static final String JDBC_DRIVER_MARIA = "org.mariadb.jdbc.Driver";
         private static final String HOST_MARIA = "localhost";
         private static final String DBNAME_MARIA = "db_waehrgs_r";
@@ -26,7 +46,7 @@ public class Main extends Application {
         private static final String USERNAME_MARIA = "root";
         private static final String PW_MARIA = "";
     }
-    
+
 
     private String createStringObjectViaClassForName(){
         try {
