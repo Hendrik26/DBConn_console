@@ -18,7 +18,7 @@ public class Main extends Application {
     // JDBC driver name and database URL
     //  Database credentials
 
-    public static class DbConnectionData {
+    private static class DbConnectionData {
         public static String getJdbcDriverMaria() {
             return JDBC_DRIVER_MARIA;
         }
