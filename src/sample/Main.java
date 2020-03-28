@@ -26,10 +26,7 @@ public class Main extends Application {
         private static final String USERNAME_MARIA = "root";
         private static final String PW_MARIA = "";
     }
-
-    private class DbConnectionData01{
-
-    }
+    
 
     private String createStringObjectViaClassForName(){
         try {
