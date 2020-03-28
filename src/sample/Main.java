@@ -39,6 +39,10 @@ public class Main extends Application {
             return PW_MARIA;
         }
 
+        public static String getUrlMaria(){
+            return "jdbc:mariadb://" + DbConnectionData.HOST_MARIA + "/" + DbConnectionData.DBNAME_MARIA;
+        }
+
         private static final String JDBC_DRIVER_MARIA = "org.mariadb.jdbc.Driver";
         private static final String HOST_MARIA = "localhost";
         private static final String DBNAME_MARIA = "db_waehrgs_r";
@@ -87,9 +91,8 @@ public class Main extends Application {
 
             //STEP 3Maria: Open a connection
             System.out.println("Connecting to database MariaDB ...");
-            String urlMaria = "jdbc:mariadb://" + DbConnectionData.HOST_MARIA + "/" + DbConnectionData.DBNAME_MARIA;
             Class<?> driverClassMaria = Class.forName(DbConnectionData.JDBC_DRIVER_MARIA);
-            connMaria = DriverManager.getConnection(urlMaria, DbConnectionData.USERNAME_MARIA, DbConnectionData.PW_MARIA);
+            connMaria = DriverManager.getConnection(DbConnectionData.getUrlMaria(), DbConnectionData.USERNAME_MARIA, DbConnectionData.PW_MARIA);
             System.out.println("Connected to database MariaDB ...");
 
             //STEP 4: Execute a query
