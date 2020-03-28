@@ -91,8 +91,9 @@ public class Main extends Application {
 
             //STEP 3Maria: Open a connection
             System.out.println("Connecting to database MariaDB ...");
-            Class<?> driverClassMaria = Class.forName(DbConnectionData.JDBC_DRIVER_MARIA);
-            connMaria = DriverManager.getConnection(DbConnectionData.getUrlMaria(), DbConnectionData.USERNAME_MARIA, DbConnectionData.PW_MARIA);
+            Class<?> driverClassMaria = Class.forName(DbConnectionData.getJdbcDriverMaria());
+            connMaria = DriverManager.getConnection(DbConnectionData.getUrlMaria(),
+                    DbConnectionData.getUsernameMaria(), DbConnectionData.getPwMaria());
             System.out.println("Connected to database MariaDB ...");
 
             //STEP 4: Execute a query
