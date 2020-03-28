@@ -18,12 +18,18 @@ public class Main extends Application {
     // JDBC driver name and database URL
     //  Database credentials
 
-    private static final String JDBC_DRIVER_MARIA = "org.mariadb.jdbc.Driver";
-    private static final String HOST_MARIA = "localhost";
-    private static final String DBNAME_MARIA = "db_waehrgs_r";
-    // private String urlMaria = "jdbc:mariadb://" + hostMaria + "/" + dbnameMaria;
-    private static final String USERNAME_MARIA = "root";
-    private static final String PW_MARIA = "";
+    public static class DbConnectionData {
+        private static final String JDBC_DRIVER_MARIA = "org.mariadb.jdbc.Driver";
+        private static final String HOST_MARIA = "localhost";
+        private static final String DBNAME_MARIA = "db_waehrgs_r";
+        // private String urlMaria = "jdbc:mariadb://" + hostMaria + "/" + dbnameMaria;
+        private static final String USERNAME_MARIA = "root";
+        private static final String PW_MARIA = "";
+    }
+
+    private class DbConnectionData01{
+
+    }
 
     private String createStringObjectViaClassForName(){
         try {
@@ -64,9 +70,9 @@ public class Main extends Application {
 
             //STEP 3Maria: Open a connection
             System.out.println("Connecting to database MariaDB ...");
-            String urlMaria = "jdbc:mariadb://" + HOST_MARIA + "/" + DBNAME_MARIA;
-            Class<?> driverClassMaria = Class.forName(JDBC_DRIVER_MARIA);
-            connMaria = DriverManager.getConnection(urlMaria, USERNAME_MARIA, PW_MARIA);
+            String urlMaria = "jdbc:mariadb://" + DbConnectionData.HOST_MARIA + "/" + DbConnectionData.DBNAME_MARIA;
+            Class<?> driverClassMaria = Class.forName(DbConnectionData.JDBC_DRIVER_MARIA);
+            connMaria = DriverManager.getConnection(urlMaria, DbConnectionData.USERNAME_MARIA, DbConnectionData.PW_MARIA);
             System.out.println("Connected to database MariaDB ...");
 
             //STEP 4: Execute a query
