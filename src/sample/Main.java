@@ -51,6 +51,28 @@ public class Main extends Application {
         private static final String PW_MARIA = "";
     }
 
+    private static Exception mariaDbConnException(Exception oldException){
+        String msg = "Error connecting to MasriaDB " + DbConnectionData.getDbnameMaria() + " !!!\r\n\r\n";
+        Exception retException = new Exception(msg, oldException.getCause());
+        retException.setStackTrace(oldException.getStackTrace());
+        return retException;
+    }
+
+    private static Connection createConnectionMariaDb() throws Exception {
+        try {
+            System.out.println("Connecting to database MariaDB in ConnFactoryMethod ...");
+            Class<?> driverClassMaria = Class.forName(DbConnectionData.getJdbcDriverMaria());
+            Connection connMaria = DriverManager.getConnection(DbConnectionData.getUrlMaria(),
+                    DbConnectionData.getUsernameMaria(), DbConnectionData.getPwMaria());
+            System.out.println("Connected to database MariaDB in ConnFactoryMethod ...");
+            return connMaria;
+        } catch(Exception e) {
+            throw mariaDbConnException(e);
+        } finally {
+            int i = -1;
+        }
+    }
+
 
     private String createStringObjectViaClassForName(){
         try {
@@ -91,9 +113,7 @@ public class Main extends Application {
 
             //STEP 3Maria: Open a connection
             System.out.println("Connecting to database MariaDB ...");
-            Class<?> driverClassMaria = Class.forName(DbConnectionData.getJdbcDriverMaria());
-            connMaria = DriverManager.getConnection(DbConnectionData.getUrlMaria(),
-                    DbConnectionData.getUsernameMaria(), DbConnectionData.getPwMaria());
+            connMaria = createConnectionMariaDb();
             System.out.println("Connected to database MariaDB ...");
 
             //STEP 4: Execute a query
