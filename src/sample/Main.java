@@ -121,6 +121,7 @@ public class Main extends Application {
 
     public static void throwTestException() throws Exception {
         throw new Exception("\r\nThis is a Test-Exception!!!\r\n");
+        ///
     }
 
     public static void main(String[] args) {
