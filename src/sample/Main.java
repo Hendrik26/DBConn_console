@@ -117,6 +117,24 @@ public class Main extends Application {
 
         this.connectDB();
         System.out.println(this.createStringObjectViaClassForName());
+        testException();
+    }
+
+    public static void testException(){
+        System.out.println("\r\n\r\nTest Exception-Properties now!!!\r\n");
+        try {
+            int i = -2;
+            throwTestException();
+            System.out.println("Test Exception-Properties, end of try-block!\r\n");
+        } catch(Exception e) {
+            System.out.println(String.format("The message of the exception is %m!\r\n", e.getMessage()));
+            System.out.println("The StackTrace of the exception is: \r\n");
+            // e.printStackTrace();
+            System.out.println("\r\nThe StackTrace of the exception has been printed! \r\n");
+        } finally {
+            int i = -1;
+            System.out.println("Exception-Properties have been tested!!!\r\n\r\n\r\n");
+        }
     }
 
     public static void throwTestException() throws Exception {
