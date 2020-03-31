@@ -119,6 +119,9 @@ public class Main extends Application {
         System.out.println(this.createStringObjectViaClassForName());
     }
 
+    public static void throwTestException() throws Exception {
+        throw new Exception("\r\nThis is a Test-Exception!!!\r\n");
+    }
 
     public static void main(String[] args) {
         launch(args);
