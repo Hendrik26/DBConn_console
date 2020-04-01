@@ -122,12 +122,14 @@ public class Main extends Application {
 
     public static void testException(){
         System.out.println("\r\n\r\nTest Exception-Properties now!!!\r\n");
+        // String testString = "StringFormatTestString";
+        // System.out.println(String.format("Test String.format(...) with %m!\r\n", testString));
         try {
             int i = -2;
             throwTestException();
             System.out.println("Test Exception-Properties, end of try-block!\r\n");
         } catch(Exception e) {
-            System.out.println(String.format("The message of the exception is %m!\r\n", e.getMessage()));
+            System.out.println("The message of the exception is " + e.getMessage() + "!\r\n");
             System.out.println("The StackTrace of the exception is: \r\n");
             // e.printStackTrace();
             System.out.println("\r\nThe StackTrace of the exception has been printed! \r\n");
