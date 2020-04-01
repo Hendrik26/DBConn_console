@@ -118,6 +118,7 @@ public class Main extends Application {
         this.connectDB();
         System.out.println(this.createStringObjectViaClassForName());
         testException();
+        testStringFormat();
     }
 
     public static void testException(){
@@ -137,6 +138,22 @@ public class Main extends Application {
             int i = -1;
             System.out.println("Exception-Properties have been tested!!!\r\n\r\n\r\n");
         }
+    }
+
+    public static void testStringFormat(){
+        System.out.println("\r\n\r\nTest method String.format(...) now!\r\n");
+        double floatVar = 3.1416;
+        int intVar = 42;
+        String stringVar = "Kaesebroetchen";
+        String fs;
+        fs = String.format("The value of the float " +
+                        "variable is %f, while " +
+                        "the value of the " +
+                        "integer variable is %d, " +
+                        " and the string is %s",
+                floatVar, intVar, stringVar);
+        System.out.println(fs);;
+        System.out.println("Method String.format(...) has been tested!\r\n");
     }
 
     public static void throwTestException() throws Exception {
