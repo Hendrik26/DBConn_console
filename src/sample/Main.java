@@ -144,14 +144,19 @@ public class Main extends Application {
         System.out.println("\r\n\r\nTest method String.format(...) now!\r\n");
         double floatVar = 3.1416;
         int intVar = 42;
-        String stringVar = "Kaesebroetchen";
+        String stringVar000 = "Kaesebroetchen";
+        String stringVar001 = "Quarkkuchen";
+        String stringVar002 = "Jogurtbecher";
         String fs;
         fs = String.format("The value of the float " +
                         "variable is %f, while " +
                         "the value of the " +
                         "integer variable is %d, " +
                         " and the string is %s",
-                floatVar, intVar, stringVar);
+                floatVar, intVar, stringVar000);
+        System.out.println(fs);;
+        fs = String.format("Test String.format(...) with %s, %s and %s!\r\n", stringVar000, stringVar001,
+                stringVar002);
         System.out.println(fs);;
         System.out.println("Method String.format(...) has been tested!\r\n");
     }
