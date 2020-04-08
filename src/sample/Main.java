@@ -1,5 +1,7 @@
 package sample;
 
+import java.lang.Integer;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -163,7 +165,7 @@ public class Main extends Application {
 
     public static void throwTestException() throws Exception {
         StackTraceElement stackTraceElement = new StackTraceElement("Main",
-                "public static void throwTestException()", "HHs StackTraceElement", -999);
+                "public static void throwTestException()", "HHs StackTraceElement", Integer.MAX_VALUE);
         StackTraceElement[] stackTraceElements = {stackTraceElement};
         Exception retException = new Exception("\r\nThis is a Test-Exception!!!\r\n");
         retException.setStackTrace(stackTraceElements);
