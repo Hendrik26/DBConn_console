@@ -132,7 +132,7 @@ public class Main extends Application {
         } catch(Exception e) {
             System.out.println("The message of the exception is " + e.getMessage() + "!\r\n");
             System.out.println("The StackTrace of the exception is: \r\n");
-            // e.printStackTrace();
+            e.printStackTrace();
             System.out.println("\r\nThe StackTrace of the exception has been printed! \r\n");
         } finally {
             int i = -1;
@@ -162,7 +162,12 @@ public class Main extends Application {
     }
 
     public static void throwTestException() throws Exception {
-        throw new Exception("\r\nThis is a Test-Exception!!!\r\n");
+        StackTraceElement stackTraceElement = new StackTraceElement("Main",
+                "public static void throwTestException()", "HHs StackTraceElement", -999);
+        StackTraceElement[] stackTraceElements = {stackTraceElement};
+        Exception retException = new Exception("\r\nThis is a Test-Exception!!!\r\n");
+        retException.setStackTrace(stackTraceElements);
+        throw retException;
         ///
     }
 
