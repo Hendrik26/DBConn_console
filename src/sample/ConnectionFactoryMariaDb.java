@@ -5,7 +5,10 @@ import java.sql.DriverManager;
 
 public class ConnectionFactoryMariaDb {
     private static Exception mariaDbConnException(Exception oldException){
-        String msg = String.format("Error connecting to MasriaDB %s !!!\r\n\r\n", DbConnectionData.getDbnameMaria());
+        String msg = String.format("Error connecting to MasriaDB %s !!!\r\n" +
+                "oldMessage==%s\r\n",
+                DbConnectionData.getDbnameMaria(),
+                oldException.getMessage());
         Exception retException = new Exception(msg, oldException.getCause());
         retException.setStackTrace(oldException.getStackTrace());
         return retException;
