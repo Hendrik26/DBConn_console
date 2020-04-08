@@ -9,6 +9,8 @@ public class ConnectionFactoryMariaDb {
                 "oldMessage==%s\r\n",
                 DbConnectionData.getDbnameMaria(),
                 oldException.getMessage());
+        StackTraceElement stackTraceElement = new StackTraceElement("createConnectionMariaDb()",
+                "mariaDbConnException", "ConnectionFactoryMariaDb", Integer.MAX_VALUE);
         Exception retException = new Exception(msg, oldException.getCause());
         retException.setStackTrace(oldException.getStackTrace());
         return retException;
