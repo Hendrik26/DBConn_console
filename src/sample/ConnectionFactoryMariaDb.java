@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 
 public class ConnectionFactoryMariaDb {
     private static Exception mariaDbConnException(Exception oldException){
-        String msg = "Error connecting to MasriaDB " + DbConnectionData.getDbnameMaria() + " !!!\r\n\r\n";
+        String msg = String.format("Error connecting to MasriaDB %s !!!\r\n\r\n", DbConnectionData.getDbnameMaria());
         Exception retException = new Exception(msg, oldException.getCause());
         retException.setStackTrace(oldException.getStackTrace());
         return retException;
