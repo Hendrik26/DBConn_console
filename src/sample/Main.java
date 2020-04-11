@@ -1,6 +1,7 @@
 package sample;
 
 import java.lang.Integer;
+import java.util.ArrayList;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -121,6 +122,42 @@ public class Main extends Application {
         System.out.println(this.createStringObjectViaClassForName());
         testException();
         testStringFormat();
+        testArrayAdding();
+    }
+
+    private static String stringArrayToString(String[] array){
+        String retString = "";
+        for (String s : array){
+            retString += s + "; ";
+        }
+        return retString;
+    }
+
+    private static String stringArrayListToString(ArrayList<String> arrayList){
+        String retString = "";
+        for (String s : arrayList){
+            retString += s + "; ";
+        }
+        return retString;
+    }
+
+    String sumString = "";
+    private /*static*/ String stringArrayListToString01(ArrayList<String> arrayList){
+        String retString = "";
+        this.sumString = "";
+        arrayList.forEach((String s) -> {
+            // retString += s + "; ";
+            this.sumString += s + "; ";
+        });
+        return retString;
+    }
+
+    public static void testArrayAdding(){
+        System.out.println("\r\n\r\nMethod testArrayAdding()!!!");
+        String[] basicArray = {"aaaaa", "bbbbb", "ccccccc", "dddddddd"};
+        String stringToAdd = "This is the String to add.";
+        // ArrayList<String> basicArrayList = new ArrayList<String>(basicArray);
+        System.out.println("basicArray== " + stringArrayToString(basicArray));
     }
 
     public static void testException(){
