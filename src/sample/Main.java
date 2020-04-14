@@ -141,13 +141,18 @@ public class Main extends Application {
         return retString;
     }
 
-    String sumString = "";
-    private /*static*/ String stringArrayListToString01(ArrayList<String> arrayList){
+    private static String stringArrayListToString01Murx(ArrayList<String> arrayList){
         String retString = "";
-        this.sumString = "";
         arrayList.forEach((String s) -> {
-            // retString += s + "; ";
-            this.sumString += s + "; ";
+            s = s + "; " + s;
+        });
+        return retString;
+    }
+
+    private static String stringArrayListToString02(ArrayList<String> arrayList){
+        String retString = "";
+        retString = arrayList.stream().reduce("", (String s1, String s2) -> {
+            return s1 + "; " + s2 + "; ";
         });
         return retString;
     }
