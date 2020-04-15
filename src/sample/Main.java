@@ -147,7 +147,7 @@ public class Main extends Application {
     private static String stringArrayListToString01Murx(ArrayList<String> arrayList){
         String retString = "";
         arrayList.forEach((String s) -> {
-            s = s + "; " + s;
+            s = s + "001; " + s;
         });
         return retString;
     }
@@ -170,6 +170,8 @@ public class Main extends Application {
         ArrayList<String> basicArrayList = new ArrayList<String>();
         Collections.addAll(basicArrayList, basicArray);
         System.out.println("basicArrayList== " + stringArrayListToString02(basicArrayList));
+        stringArrayListToString01Murx(basicArrayList);
+        System.out.println("basicArrayList001Murx== " + stringArrayListToString02(basicArrayList));
     }
 
     public static void testException(){
