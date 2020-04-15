@@ -12,6 +12,9 @@ import javafx.stage.Stage;
 //STEP 1. Import required packages
 import java.lang.reflect.Constructor;
 import java.sql.*;
+import java.util.Arrays;
+import java.util.Collections;
+
 import myOverPackage.*;
 
 // Branch HH002
@@ -152,7 +155,7 @@ public class Main extends Application {
     private static String stringArrayListToString02(ArrayList<String> arrayList){
         String retString = "";
         retString = arrayList.stream().reduce("", (String s1, String s2) -> {
-            return s1 + "; " + s2 + "; ";
+            return s1 +  s2 + "; ";
         });
         return retString;
     }
@@ -160,9 +163,13 @@ public class Main extends Application {
     public static void testArrayAdding(){
         System.out.println("\r\n\r\nMethod testArrayAdding()!!!");
         String[] basicArray = {"aaaaa", "bbbbb", "ccccccc", "dddddddd"};
-        String stringToAdd = "This is the String to add.";
-        // ArrayList<String> basicArrayList = new ArrayList<String>(basicArray);
         System.out.println("basicArray== " + stringArrayToString(basicArray));
+        String stringToAdd = "This is the String to add.";
+        // ArrayList<String> basicArrayList = new ArrayList<String>(basicArray); // wrong syntax
+        // ArrayList<String> basicArrayList = Arrays.asList(basicArray); // wrong syntax
+        ArrayList<String> basicArrayList = new ArrayList<String>();
+        Collections.addAll(basicArrayList, basicArray);
+        System.out.println("basicArrayList== " + stringArrayListToString02(basicArrayList));
     }
 
     public static void testException(){
