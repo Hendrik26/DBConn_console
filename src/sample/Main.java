@@ -12,7 +12,6 @@ import javafx.stage.Stage;
 //STEP 1. Import required packages
 import java.lang.reflect.Constructor;
 import java.sql.*;
-import java.util.Arrays;
 import java.util.Collections;
 
 import myOverPackage.*;
@@ -152,7 +151,8 @@ public class Main extends Application {
         return retString;
     }
 
-    private static String stringArrayListToString02(ArrayList<String> arrayList){
+    private static String stringArrayToString(ArrayList<String> arrayList){
+        /** Overrides method for String[] */
         String retString = "";
         retString = arrayList.stream().reduce("", (String s1, String s2) -> {
             return s1 +  s2 + "; ";
@@ -169,9 +169,9 @@ public class Main extends Application {
         // ArrayList<String> basicArrayList = Arrays.asList(basicArray); // wrong syntax
         ArrayList<String> basicArrayList = new ArrayList<String>();
         Collections.addAll(basicArrayList, basicArray);
-        System.out.println("basicArrayList== " + stringArrayListToString02(basicArrayList));
+        System.out.println("basicArrayList== " + stringArrayToString(basicArrayList));
         stringArrayListToString01Murx(basicArrayList);
-        System.out.println("basicArrayList001Murx== " + stringArrayListToString02(basicArrayList));
+        System.out.println("basicArrayList001Murx== " + stringArrayToString(basicArrayList));
     }
 
     public static void testException(){
