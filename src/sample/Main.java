@@ -135,22 +135,6 @@ public class Main extends Application {
         return retString;
     }
 
-    private static String stringArrayListToString(ArrayList<String> arrayList){
-        String retString = "";
-        for (String s : arrayList){
-            retString += s + "; ";
-        }
-        return retString;
-    }
-
-    private static String stringArrayListToString01Murx(ArrayList<String> arrayList){
-        String retString = "";
-        arrayList.forEach((String s) -> {
-            s = s + "001; " + s;
-        });
-        return retString;
-    }
-
     private static String stringArrayToString(ArrayList<String> arrayList){
         /** Overrides method for String[] */
         String retString = "";
@@ -170,8 +154,6 @@ public class Main extends Application {
         ArrayList<String> basicArrayList = new ArrayList<String>();
         Collections.addAll(basicArrayList, basicArray);
         System.out.println("basicArrayList== " + stringArrayToString(basicArrayList));
-        stringArrayListToString01Murx(basicArrayList);
-        System.out.println("basicArrayList001Murx== " + stringArrayToString(basicArrayList));
     }
 
     public static void testException(){
