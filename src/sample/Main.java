@@ -175,6 +175,12 @@ public class Main extends Application {
         System.out.println("sortedArrayList== " + stringArrayToString(sortStringArrayList(basicArrayList)));
         System.out.println("sortedModifiedArrayList== "
                 + stringArrayToString(sortModifyStringArrayList(basicArrayList)));
+        basicArrayList.add(stringToAdd);
+        System.out.println("basicArrayListAdded== " + stringArrayToString(basicArrayList));
+        basicArrayList.add(0,stringToAdd);
+        System.out.println("basicArrayListAdded== " + stringArrayToString(basicArrayList));
+        basicArrayList.add(basicArrayList.size() / 2,stringToAdd);
+        System.out.println("basicArrayListAdded== " + stringArrayToString(basicArrayList));
     }
 
     public static void testException(){
