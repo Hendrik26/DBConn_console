@@ -16,7 +16,7 @@ public class ConnectionFactoryMariaDb {
 
         ArrayList<StackTraceElement> retStackTraceList = new ArrayList<StackTraceElement>();
         Collections.addAll(retStackTraceList, oldException.getStackTrace());
-        retStackTraceList.add(0,stackTraceElement);
+        retStackTraceList.add(0,stackTraceElement); //////
 
         Exception retException = new Exception(msg, oldException.getCause());
         retException.setStackTrace(retStackTraceList.toArray(oldException.getStackTrace()));
