@@ -144,6 +144,14 @@ public class Main extends Application {
         return retString;
     }
 
+    private static ArrayList<String> sortStringArrayList(ArrayList<String> arrayList){
+        ArrayList<String> retStringList = (ArrayList<String>)arrayList.clone();
+        retStringList.sort((s1, s2) -> {
+            return (-1) * s1.compareToIgnoreCase(s2);
+        });
+        return retStringList;
+    }
+
     public static void testArrayAdding(){
         System.out.println("\r\n\r\nMethod testArrayAdding()!!!");
         String[] basicArray = {"aaaaa", "bbbbb", "ccccccc", "dddddddd"};
@@ -154,6 +162,7 @@ public class Main extends Application {
         ArrayList<String> basicArrayList = new ArrayList<String>();
         Collections.addAll(basicArrayList, basicArray);
         System.out.println("basicArrayList== " + stringArrayToString(basicArrayList));
+        System.out.println("sortedArrayList== " + stringArrayToString(sortStringArrayList(basicArrayList)));
     }
 
     public static void testException(){
