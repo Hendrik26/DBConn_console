@@ -173,7 +173,8 @@ public class Main extends Application {
         Collections.addAll(basicArrayList, basicArray);
         System.out.println("basicArrayList== " + stringArrayToString(basicArrayList));
         System.out.println("sortedArrayList== " + stringArrayToString(sortStringArrayList(basicArrayList)));
-        System.out.println("sortedModifiedArrayList== " + stringArrayToString(sortModifyStringArrayList(basicArrayList)));
+        System.out.println("sortedModifiedArrayList== "
+                + stringArrayToString(sortModifyStringArrayList(basicArrayList)));
     }
 
     public static void testException(){
