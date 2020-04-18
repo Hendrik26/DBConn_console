@@ -2,6 +2,8 @@ package sample;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class ConnectionFactoryMariaDb {
     private static Exception mariaDbConnException(Exception oldException){
@@ -11,8 +13,13 @@ public class ConnectionFactoryMariaDb {
                 oldException.getMessage());
         StackTraceElement stackTraceElement = new StackTraceElement("createConnectionMariaDb()",
                 "mariaDbConnException", "ConnectionFactoryMariaDb", Integer.MAX_VALUE);
+
+        ArrayList<StackTraceElement> retStackTraceList = new ArrayList<StackTraceElement>();
+        Collections.addAll(retStackTraceList, oldException.getStackTrace());
+        retStackTraceList.add(0,stackTraceElement);
+
         Exception retException = new Exception(msg, oldException.getCause());
-        retException.setStackTrace(oldException.getStackTrace());
+        retException.setStackTrace(retStackTraceList.toArray(oldException.getStackTrace()));
         return retException;
     }
 
