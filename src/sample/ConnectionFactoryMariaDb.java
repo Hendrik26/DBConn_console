@@ -75,7 +75,6 @@ public class ConnectionFactoryMariaDb {
         private static final String JDBC_DRIVER_MARIA = "org.mariadb.jdbc.Driver";
         private static final String HOST_MARIA = "localhost";
         private static final String DBNAME_MARIA = "db_waehrgs_r";
-        // private String urlMaria = "jdbc:mariadb://" + hostMaria + "/" + dbnameMaria;
         private static final String USERNAME_MARIA = "root";
         private static final String PW_MARIA = "";
     }
