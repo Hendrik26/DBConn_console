@@ -5,7 +5,16 @@ import java.sql.DriverManager;
 import java.util.ArrayList;
 import java.util.Collections;
 
+/**
+ * produces connerction to the following Database
+ *         private static final String JDBC_DRIVER_MARIA = "org.mariadb.jdbc.Driver";
+ *         private static final String HOST_MARIA = "localhost";
+ *         private static final String DBNAME_MARIA = "db_waehrgs_r";
+ *         private static final String USERNAME_MARIA = "root";
+ *         private static final String PW_MARIA = "";
+ */
 public class ConnectionFactoryMariaDb {
+
     private static Exception mariaDbConnException(Exception oldException){
         String msg = String.format("Error connecting to MasriaDB %s !!!\r\n" +
                 "oldMessage==%s\r\n",
