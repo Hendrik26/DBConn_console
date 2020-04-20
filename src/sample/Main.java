@@ -122,7 +122,7 @@ public class Main extends Application {
 
         this.connectDB();
         System.out.println(this.createStringObjectViaClassForName());
-        testException();
+        // testException();
         testStringFormat();
         testArrayAdding();
     }

@@ -34,6 +34,8 @@ public class ConnectionFactoryMariaDb {
 
     static Connection createConnectionMariaDb() throws Exception {
         try {
+            System.load(DbConnectionData.getJdbcDriverFilePathMaria());
+            ////////////////////////////
             System.out.println("Connecting to database MariaDB in ConnFactoryMethod ...");
             Class<?> driverClassMaria = Class.forName(DbConnectionData.getJdbcDriverMaria());
             Connection connMaria = DriverManager.getConnection(DbConnectionData.getUrlMaria(),
@@ -73,6 +75,14 @@ public class ConnectionFactoryMariaDb {
         }
 
         private static final String JDBC_DRIVER_MARIA = "org.mariadb.jdbc.Driver";
+
+        public static String getJdbcDriverFilePathMaria() {
+            return JDBC_DRIVER_FILE_PATH_MARIA;
+        }
+
+        private static final String JDBC_DRIVER_FILE_PATH_MARIA
+                = "C:\\Users\\hendr\\.IntelliJIdea2019.3\\config\\jdbc-drivers\\MariaDB Connector J" +
+                "\\2.4.1\\mariadb-java-client-2.4.1.jar";
         private static final String HOST_MARIA = "localhost";
         private static final String DBNAME_MARIA = "db_waehrgs_r";
         private static final String USERNAME_MARIA = "root";
