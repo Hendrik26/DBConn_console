@@ -230,7 +230,6 @@ public class Main extends Application {
         Exception retException = new Exception("\r\nThis is a Test-Exception!!!\r\n");
         retException.setStackTrace(stackTraceElements);
         throw retException;
-        ///
     }
 
     public static void main(String[] args) {
