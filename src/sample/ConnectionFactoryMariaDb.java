@@ -27,12 +27,12 @@ public class ConnectionFactoryMariaDb {
     }
 
     private static Exception mariaDbConnException(Exception oldException){
-        String msg = String.format("Error connecting to MasriaDB %s !!!\r\n" +
+        String msg = String.format("Exception connecting to MariaDB %s !!!\r\n" +
                 "oldMessage==%s\r\n",
                 DbConnectionData.getDbnameMaria(),
                 oldException.getMessage());
         StackTraceElement stackTraceElement = new StackTraceElement("createConnectionMariaDb()",
-                "mariaDbConnException", "ConnectionFactoryMariaDb", Integer.MAX_VALUE);
+                "mariaDbConnException(Exception oldException)", "ConnectionFactoryMariaDb", Integer.MAX_VALUE);
 
         ArrayList<StackTraceElement> retStackTraceList = new ArrayList<StackTraceElement>();
         Collections.addAll(retStackTraceList, oldException.getStackTrace());
@@ -40,6 +40,23 @@ public class ConnectionFactoryMariaDb {
 
         Exception retException = new Exception(msg, oldException.getCause());
         retException.setStackTrace(retStackTraceList.toArray(oldException.getStackTrace()));
+        return retException;
+    }
+
+    private static Exception mariaDbConnException(Error oldError){
+        String msg = String.format("Fatal Error connecting to MariaDB %s !!!\r\n" +
+                        "oldMessage==%s\r\n",
+                DbConnectionData.getDbnameMaria(),
+                oldError.getMessage());
+        StackTraceElement stackTraceElement = new StackTraceElement("createConnectionMariaDb()",
+                "mariaDbConnException(Error oldError)", "ConnectionFactoryMariaDb", Integer.MAX_VALUE);
+
+        ArrayList<StackTraceElement> retStackTraceList = new ArrayList<StackTraceElement>();
+        Collections.addAll(retStackTraceList, oldError.getStackTrace());
+        retStackTraceList.add(0,stackTraceElement);
+
+        Exception retException = new Exception(msg, oldError.getCause());
+        retException.setStackTrace(retStackTraceList.toArray(oldError.getStackTrace()));
         return retException;
     }
 
