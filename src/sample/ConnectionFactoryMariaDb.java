@@ -45,8 +45,8 @@ public class ConnectionFactoryMariaDb {
 
     static Connection createConnectionMariaDb() throws Exception {
         try {
-            ConnectionFactoryMariaDb.throwTestException();
-            // System.load(DbConnectionData.getJdbcDriverFilePathMaria());
+            // ConnectionFactoryMariaDb.throwTestException();
+            System.load(DbConnectionData.getJdbcDriverFilePathMaria());
             ////////////////////////////
             System.out.println("Connecting to database MariaDB in ConnFactoryMethod ...");
             Class<?> driverClassMaria = Class.forName(DbConnectionData.getJdbcDriverMaria());
@@ -54,8 +54,8 @@ public class ConnectionFactoryMariaDb {
                     DbConnectionData.getUsernameMaria(), DbConnectionData.getPwMaria());
             System.out.println("Connected to database MariaDB in ConnFactoryMethod ...");
             return connMaria;
-        } catch(Exception e) {
-            throw mariaDbConnException(e);
+        } catch(Exception exc) {
+            throw mariaDbConnException(exc);
         } finally {
             int i = -1;
         }
