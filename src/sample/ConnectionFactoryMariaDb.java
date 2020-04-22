@@ -90,8 +90,10 @@ public class ConnectionFactoryMariaDb {
             return connMaria;
         } catch(Exception exc) {
             throw mariaDbConnException(exc);
-        } catch (Error err) {
-            throw mariaDbConnException(err);
+        /*} catch (Error err) {
+            throw mariaDbConnException(err);*/
+        } catch (Throwable thw) {
+          throw mariaDbConnThrowableException(thw);
         } finally {
             int i = -1;
         }
