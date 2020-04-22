@@ -60,6 +60,23 @@ public class ConnectionFactoryMariaDb {
         return retException;
     }
 
+    private static Exception mariaDbConnThrowableException(Throwable oldThrowable){
+        String msg = String.format("Other Throwable connecting to MariaDB %s !!!\r\n" +
+                        "oldMessage==%s\r\n",
+                DbConnectionData.getDbnameMaria(),
+                oldThrowable.getMessage());
+        StackTraceElement stackTraceElement = new StackTraceElement("createConnectionMariaDb()",
+                "mariaDbConnException(Throwable oldThrowable)", "ConnectionFactoryMariaDb", Integer.MAX_VALUE);
+
+        ArrayList<StackTraceElement> retStackTraceList = new ArrayList<StackTraceElement>();
+        Collections.addAll(retStackTraceList, oldThrowable.getStackTrace());
+        retStackTraceList.add(0,stackTraceElement);
+
+        Exception retException = new Exception(msg, oldThrowable.getCause());
+        retException.setStackTrace(retStackTraceList.toArray(oldThrowable.getStackTrace()));
+        return retException;
+    }
+
     static Connection createConnectionMariaDb() throws Exception {
         try {
             // ConnectionFactoryMariaDb.throwTestException();
