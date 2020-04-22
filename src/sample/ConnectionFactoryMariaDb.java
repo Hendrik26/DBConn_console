@@ -56,6 +56,9 @@ public class ConnectionFactoryMariaDb {
             return connMaria;
         } catch(Exception exc) {
             throw mariaDbConnException(exc);
+        } catch (Error err) {
+            System.out.println("Error successfully caught ???");
+            return null;
         } finally {
             int i = -1;
         }
