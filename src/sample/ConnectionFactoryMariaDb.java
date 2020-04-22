@@ -75,7 +75,8 @@ public class ConnectionFactoryMariaDb {
             throw mariaDbConnException(exc);
         } catch (Error err) {
             System.out.println("Error successfully caught ???");
-            return null;
+            throw mariaDbConnException(err);
+            // return null;
         } finally {
             int i = -1;
         }
