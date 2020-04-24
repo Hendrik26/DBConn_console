@@ -80,7 +80,7 @@ public class ConnectionFactoryMariaDb {
     static Connection createConnectionMariaDb() throws Exception {
         try {
             // ConnectionFactoryMariaDb.throwTestException();
-            System.load(DbConnectionData.getJdbcDriverFilePathMaria());
+            // System.load(DbConnectionData.getJdbcDriverFilePathMaria());
             ////////////////////////////
             System.out.println("Connecting to database MariaDB in ConnFactoryMethod ...");
             Class<?> driverClassMaria = Class.forName(DbConnectionData.getJdbcDriverMaria());
