@@ -41,7 +41,7 @@ public class Main extends Application {
     }
 
     private void connectDB(){
-        OverPWriter overPWriter = new OverPWriter();
+        myOverPackage.OverPWriter overPWriter = new OverPWriter();
         overPWriter.writeText("aaaaaa");
         myOverPackage001.OverPWriter001.writeText("bbbbbbb");
         myOverPackage.myPackage.myUnderPackage.UnderPWriter underPWriter
