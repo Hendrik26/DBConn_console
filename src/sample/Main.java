@@ -50,6 +50,13 @@ public class Main extends Application {
         SampleWriter sampleWriter = new SampleWriter();
         sampleWriter.writeText("samW, samW, samW");
 
+        myExtOverPackage.OverPWriter overExtPWriter = new myExtOverPackage.OverPWriter();
+        overExtPWriter.writeText("extAaaaaa");
+        // myOverPackage001.OverPWriter001.writeText("bbbbbbb");
+        myExtOverPackage.myPackage.myUnderPackage.UnderPWriter underExtPWriter
+                = new myExtOverPackage.myPackage.myUnderPackage.UnderPWriter();
+        underExtPWriter.writeText("extCccccccc");
+
 
 
 
