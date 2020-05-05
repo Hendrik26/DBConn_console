@@ -52,7 +52,6 @@ public class Main extends Application {
 
         myExtOverPackage.OverPWriter overExtPWriter = new myExtOverPackage.OverPWriter();
         overExtPWriter.writeText("extAaaaaa");
-        // myOverPackage001.OverPWriter001.writeText("bbbbbbb");
         myExtOverPackage.myPackage.myUnderPackage.UnderPWriter underExtPWriter
                 = new myExtOverPackage.myPackage.myUnderPackage.UnderPWriter();
         underExtPWriter.writeText("extCccccccc");
