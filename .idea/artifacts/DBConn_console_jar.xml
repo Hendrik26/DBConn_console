@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="DBConn_console:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/DBConn_console_jar</output-path>
+    <root id="archive" name="DBConn_console.jar">
+      <element id="module-output" name="DBConn_console" />
+      <element id="dir-copy" path="$PROJECT_DIR$/../../_extLibraries" />
+      <element id="extracted-dir" path="$APPLICATION_CONFIG_DIR$/jdbc-drivers/MariaDB Connector J/2.4.1/mariadb-java-client-2.4.1.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
