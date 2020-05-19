@@ -15,17 +15,6 @@ import java.util.Collections;
  */
 public class ConnectionFactoryMariaDb {
 
-    private static void throwTestException() throws Exception {
-        StackTraceElement stackTraceElement = new StackTraceElement("ConnectionFactoryMariaDb",
-                "private static void throwTestException()", "HHs MariaDbConn-StackTraceElement",
-                Integer.MAX_VALUE);
-        StackTraceElement[] stackTraceElements = {stackTraceElement};
-        Exception retException
-                = new Exception("\r\nThis is a Test-Exception of class ConnectionFactoryMariaDb!!!\r\n");
-        retException.setStackTrace(stackTraceElements);
-        throw retException;
-    }
-
     private static Exception mariaDbConnException(Exception oldException){
         String msg = String.format("Exception connecting to MariaDB %s !!!\r\n" +
                 "oldMessage==%s\r\n",
@@ -79,9 +68,6 @@ public class ConnectionFactoryMariaDb {
 
     static Connection createConnectionMariaDb() throws Exception {
         try {
-            // ConnectionFactoryMariaDb.throwTestException();
-            // System.load(DbConnectionData.getJdbcDriverFilePathMaria());
-            ////////////////////////////
             System.out.println("Connecting to database MariaDB in ConnFactoryMethod ...");
             Class<?> driverClassMaria = Class.forName(DbConnectionData.getJdbcDriverMaria());
             Connection connMaria = DriverManager.getConnection(DbConnectionData.getUrlMaria(),
