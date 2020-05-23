@@ -16,7 +16,7 @@ import java.util.Collections;
 
 // Branch HH003
 
-public class Main extends Application {
+public class Main {
 
     private static void connectDB(){
         System.out.println("Begin connecting to DB!!!\r\n");
@@ -77,23 +77,9 @@ public class Main extends Application {
         System.out.println("Goodbye!!!!!!!!!!!!");
     }
 
-    @Override
-    public void start(Stage primaryStage) throws Exception{
-        System.out.println("Start method start!!!");
-        /* Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
-        primaryStage.show();
-        System.out.println("Hallo World GUI-Console!"); */
-
-        this.connectDB();
-        System.out.println("End method start!!!");
-    }
-
-
     public static void main(String[] args) {
         System.out.println("Start method main!!!");
-        // launch(args);
+        connectDB();
         System.out.println("End method main!!!");
     }
 }
