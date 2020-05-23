@@ -79,6 +79,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+        System.out.println("Start method start!!!");
         /* Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root, 300, 275));
@@ -86,10 +87,13 @@ public class Main extends Application {
         System.out.println("Hallo World GUI-Console!"); */
 
         this.connectDB();
+        System.out.println("End method start!!!");
     }
 
 
     public static void main(String[] args) {
-        launch(args);
+        System.out.println("Start method main!!!");
+        // launch(args);
+        System.out.println("End method main!!!");
     }
 }
