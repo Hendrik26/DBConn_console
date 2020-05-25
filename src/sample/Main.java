@@ -43,10 +43,11 @@ public class Main extends Application {
     private void connectDB(){
         myOverPackage.OverPWriter overPWriter = new OverPWriter();
         overPWriter.writeText("aaaaaa");
-        myOverPackage001.OverPWriter001.writeText("bbbbbbb");
+        myOverPackage.OverPWriter.writeTextStatic("bbbbbbb");
         myOverPackage.myPackage.myUnderPackage.UnderPWriter underPWriter
                 = new myOverPackage.myPackage.myUnderPackage.UnderPWriter();
         underPWriter.writeText("ccccccccccccc");
+        myOverPackage.myPackage.myUnderPackage.UnderPWriter.writeTextStatic("ddddddddddddddd");
         SampleWriter sampleWriter = new SampleWriter();
         sampleWriter.writeText("samW, samW, samW");
 
