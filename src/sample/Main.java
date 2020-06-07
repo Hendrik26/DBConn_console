@@ -194,6 +194,7 @@ public class Main extends Application {
         System.out.println("\r\n\r\nTest Exception-Properties now!!!\r\n");
         // String testString = "StringFormatTestString";
         // System.out.println(String.format("Test String.format(...) with %m!\r\n", testString));
+        // parameterized String
         try {
             int i = -2;
             throwTestException();
