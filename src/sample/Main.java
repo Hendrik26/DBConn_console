@@ -44,7 +44,6 @@ public class Main extends Application {
         System.out.println("Begin connecting to DB!!!\r\n");
         System.out.println("----------------------------\r\n\r\n");
 
-        // Connection conn = null;
         Connection connMaria = null;
         Statement stmt = null;
         try{
