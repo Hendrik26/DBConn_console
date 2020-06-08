@@ -210,6 +210,7 @@ public class Main extends Application {
     }
 
     public static void testStringFormat(){
+        // uses parameterized Strings
         System.out.println("\r\n\r\nTest method String.format(...) now!\r\n");
         double floatVar = 3.1416;
         int intVar = 42;
