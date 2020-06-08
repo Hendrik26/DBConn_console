@@ -41,25 +41,6 @@ public class Main extends Application {
     }
 
     private void connectDB(){
-        myOverPackage.OverPWriter overPWriter = new OverPWriter();
-        overPWriter.writeText("aaaaaa");
-        myOverPackage.OverPWriter.writeTextStatic("bbbbbbb");
-        myOverPackage.myPackage.myUnderPackage.UnderPWriter underPWriter
-                = new myOverPackage.myPackage.myUnderPackage.UnderPWriter();
-        underPWriter.writeText("ccccccccccccc");
-        myOverPackage.myPackage.myUnderPackage.UnderPWriter.writeTextStatic("ddddddddddddddd");
-        SampleWriter sampleWriter = new SampleWriter();
-        sampleWriter.writeText("samW, samW, samW");
-
-        myExtOverPackage.OverPWriter overExtPWriter = new myExtOverPackage.OverPWriter();
-        overExtPWriter.writeText("extAaaaaa");
-        myExtOverPackage.myPackage.myUnderPackage.UnderPWriter underExtPWriter
-                = new myExtOverPackage.myPackage.myUnderPackage.UnderPWriter();
-        underExtPWriter.writeText("extCccccccc");
-
-
-
-
         System.out.println("Begin connecting to DB!!!\r\n");
         System.out.println("----------------------------\r\n\r\n");
 
@@ -119,6 +100,24 @@ public class Main extends Application {
         System.out.println("Goodbye!!!!!!!!!!!!");
     }
 
+    private static void testPackages() {
+        OverPWriter overPWriter = new OverPWriter();
+        overPWriter.writeText("aaaaaa");
+        OverPWriter.writeTextStatic("bbbbbbb");
+        myOverPackage.myPackage.myUnderPackage.UnderPWriter underPWriter
+                = new myOverPackage.myPackage.myUnderPackage.UnderPWriter();
+        underPWriter.writeText("ccccccccccccc");
+        myOverPackage.myPackage.myUnderPackage.UnderPWriter.writeTextStatic("ddddddddddddddd");
+        SampleWriter sampleWriter = new SampleWriter();
+        sampleWriter.writeText("samW, samW, samW");
+
+        myExtOverPackage.OverPWriter overExtPWriter = new myExtOverPackage.OverPWriter();
+        overExtPWriter.writeText("extAaaaaa");
+        myExtOverPackage.myPackage.myUnderPackage.UnderPWriter underExtPWriter
+                = new myExtOverPackage.myPackage.myUnderPackage.UnderPWriter();
+        underExtPWriter.writeText("extCccccccc");
+    }
+
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
@@ -127,6 +126,7 @@ public class Main extends Application {
         primaryStage.show();
         System.out.println("Hallo World GUI-Console!");
 
+        this.testPackages();
         this.connectDB();
         System.out.println(this.createStringObjectViaClassForName());
         // testException();
